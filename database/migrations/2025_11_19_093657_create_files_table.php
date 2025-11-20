@@ -11,10 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('shops', function (Blueprint $table) {
+        Schema::create('files', function (Blueprint $table) {
             $table->id();
             $table->string('shop_name');
-            $table->string('pdf_path')->nullable();
+            $table->string('file_path')->nullable();
             $table->string('qr_path')->nullable();
             $table->foreignId('user_id_created')
                 ->nullable()
@@ -29,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('shops');
+        Schema::dropIfExists('files');
     }
 };

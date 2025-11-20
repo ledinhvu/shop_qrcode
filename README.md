@@ -1,6 +1,6 @@
 # Laravel QR Code Project
 
-Yêu cầu: PHP >= 8.1, Composer, MySQL hoặc database tương thích, Node.js & npm/yarn nếu project có front-end.
+Yêu cầu: PHP >= 8.1, Composer, MySQL
 
 Cài đặt dự án:
 
@@ -26,6 +26,9 @@ cp .env.example .env
 
 # Generate application key
 php artisan key:generate
+
+# Chạy symbolic link
+php artisan storage:link
 
 # Chạy migration
 php artisan migrate

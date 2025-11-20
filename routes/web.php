@@ -1,15 +1,15 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ShopController;
+use App\Http\Controllers\FileController;
 
 // Route::get('/', function () {
 //     return view('welcome');
 // });
 Route::middleware('auth.basic')->group(function () {
-    Route::get('/', [ShopController::class, 'index'])->name('shops.index');
-    Route::get('/shops/create', [ShopController::class, 'create'])->name('shops.create');
-    Route::post('/shops', [ShopController::class, 'store'])->name('shops.store');
-    Route::get('/shops/{shop}', [ShopController::class, 'show'])->name('shops.show');
-    Route::delete('/shops/{shop}', [ShopController::class, 'destroy'])->name('shops.destroy');
+    Route::get('/', [FileController::class, 'index'])->name('files.index');
+    Route::get('/files/create', [FileController::class, 'create'])->name('files.create');
+    Route::post('/files', [FileController::class, 'store'])->name('files.store');
+    Route::get('/files/{file}', [FileController::class, 'show'])->name('files.show');
+    Route::delete('/files/{file}', [FileController::class, 'destroy'])->name('files.destroy');
 });
